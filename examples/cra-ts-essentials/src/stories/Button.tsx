@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './button.css';
 
 export interface ButtonProps {
@@ -35,6 +35,11 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
+  useEffect(() => {
+    console.log('button mounted');
+  }, []);
+
   return (
     <button
       type="button"

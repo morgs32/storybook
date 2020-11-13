@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/react/types-6-0';
 
@@ -13,7 +13,13 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => {
+  useEffect(() => {
+    console.log('story mounted');
+  }, []);
+
+  return <Button {...args} />;
+};
 
 export const Primary = Template.bind({});
 

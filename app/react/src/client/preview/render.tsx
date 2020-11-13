@@ -52,6 +52,7 @@ export default async function renderMain({
   showException,
   forceRender,
 }: RenderContext) {
+  console.log('storyContext', storyContext);
   const Story = unboundStoryFn as FunctionComponent<StoryContext>;
 
   const content = (
